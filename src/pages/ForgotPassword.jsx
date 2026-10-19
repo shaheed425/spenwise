@@ -24,13 +24,8 @@ export default function ForgotPassword() {
 
     try {
       setLoading(true);
-      const res = await requestPasswordReset(email);
-      if (res?.otp) {
-        setOtp(res.otp);
-        alert(res.message || `OTP: ${res.otp}`);
-      } else {
-        alert("OTP sent to your email");
-      }
+      await requestPasswordReset(email);
+      alert("OTP sent to your email! Please check your inbox.");
       setStep(2);
     } catch (err) {
       alert(err.response?.data?.message || "Failed to send reset OTP");

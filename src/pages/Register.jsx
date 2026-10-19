@@ -52,11 +52,8 @@ export default function Register() {
     };
 
     try {
-      const res = await registerUser(payload);
-      showToast(res?.message || "OTP sent to your email", "success");
-      if (res?.otp) {
-        setData((prev) => ({ ...prev, otp: res.otp }));
-      }
+      await registerUser(payload);
+      showToast("OTP sent to your email! Please check your inbox.", "success");
       setStep("otp");
     } catch (error) {
       showToast(
