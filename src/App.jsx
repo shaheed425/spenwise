@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 
-import AddExpense from "./pages/Addexpense";
+import AddExpense from "./pages/AddExpense";
 import AddIncome from "./pages/AddIncome";
 import ExpenseHistory from "./pages/ExpenseHistory";
 import IncomeHistory from "./pages/IncomeHistory";
