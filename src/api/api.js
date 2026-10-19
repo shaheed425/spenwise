@@ -1,8 +1,13 @@
 import axios from "axios";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.MODE === "production"
+    ? "https://spenwiseback.onrender.com"
+    : "http://localhost:5000");
+
 const api = axios.create({
-  // baseURL: "https://spendwise-avdh.onrender.com",
-  baseURL: "http://localhost:5000", // ✅ FIXED (was 5173)
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 
